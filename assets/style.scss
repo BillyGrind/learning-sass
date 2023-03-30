@@ -10,7 +10,7 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 50%;
+  width: 400px;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -20,29 +20,38 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    padding: 5%;
+    // padding: 5%;
     background-color: white;
     background-position: bottom;
-    .hiddentext{
-        display: none;
-    }
+    max-height: 30%;
+    // .hiddentext{
+    //     display: none;
+    // }
+  }
+  .hiddentext {
+    transform: scale(0);
+    // max-height:max-content;
+    // overflow:hidden;
+
   }
   .bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     color: blue;
   }
   .date {
     background-color: orangered;
     border-radius: 100%;
     align-self: flex-end;
+    justify-content: flex-start;
     padding: 0px;
     color: white;
     position: relative;
     top: 0px;
-    right:0px;
+    right: 0px;
   }
-  .photo{
+  .photo {
     background-color: orangered;
     align-self: flex-start;
     padding: 2px;
@@ -52,14 +61,18 @@ body {
   }
 }
 
+// %hidden_text .hiddentext{
+//     display: block;
+// }
 
-%hidden_text .hiddentext{
-    display: contents;
-}
-%blur .container{
-    background-size: 110%;
-}
+// %blur .container{
+//     background-size: 110%;
+//     backdrop-filter: blur(10px) ;
+// }
 
-:hover.container{
-    @extend %hidden_text %blur
-}
+// %text_transition .text {
+//     transition-property: height;
+//     transition-duration: 2s;
+//     transition-timing-function: linear;
+//     transition-delay: 1s;
+// }

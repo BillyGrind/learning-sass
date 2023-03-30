@@ -10,7 +10,7 @@ body {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 50%;
+  width: 400px;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -21,22 +21,24 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: 5%;
   background-color: white;
   background-position: bottom;
+  max-height: 30%;
 }
-.container .text .hiddentext {
-  display: none;
+.container .hiddentext {
+  transform: scale(0);
 }
 .container .bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   color: blue;
 }
 .container .date {
   background-color: orangered;
   border-radius: 100%;
   align-self: flex-end;
+  justify-content: flex-start;
   padding: 0px;
   color: white;
   position: relative;
@@ -50,8 +52,4 @@ body {
   width: 25%;
   color: white;
   text-align: center;
-}
-
-:hover.container .hiddentext {
-  display: contents;
 }/*# sourceMappingURL=style.css.map */
