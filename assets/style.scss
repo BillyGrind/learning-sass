@@ -1,11 +1,65 @@
 body {
-    background : red;
-    p{
-        color: yellow;
+  background: lightcyan;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-image: url("/src/girl.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 5%;
+    background-color: white;
+    background-position: bottom;
+    .hiddentext{
+        display: none;
     }
-    font{
-        
-        size: 2em;
-        weight: bold;
-    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    color: blue;
+  }
+  .date {
+    background-color: orangered;
+    border-radius: 100%;
+    align-self: flex-end;
+    padding: 0px;
+    color: white;
+    position: relative;
+    top: 0px;
+    right:0px;
+  }
+  .photo{
+    background-color: orangered;
+    align-self: flex-start;
+    padding: 2px;
+    width: 25%;
+    color: white;
+    text-align: center;
+  }
+}
+
+
+%hidden_text .hiddentext{
+    display: contents;
+}
+%blur .container{
+    background-size: 110%;
+}
+
+:hover.container{
+    @extend %hidden_text %blur
 }
