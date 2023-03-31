@@ -1,104 +1,198 @@
 // Faire deux sections principals
-// un pousse l'autre , le texte apparait en montant 
+// un pousse l'autre , le texte apparait en montant
 // utiliser translate
-// 
-
-
+//
 
 body {
   background: lightcyan;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .container {
-  width: 400px;
-  height: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 600px;
+  margin-top: 10%;
+}
+
+.fond {
+  background-image: url("/src/girl.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 500px;
+  height: 400px;
+  // z-index: -1;
+  // backdrop-filter: blur(0);
+  // transform: scale(0);
+  transition: all 1s;
+  .date {
+    background-color: orangered;
+    color: white;
+    padding: 5px;
+    border-radius: 75px;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    text-align: center;
+    margin-left: 430px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+}
+
+.article {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 500px;
+  height: 200px;
   overflow: hidden;
-  
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-top: 5%;
-    background-image: url("/src/girl.jpg");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    transition: 0.7s;
-  }
-
-  // .date {
-  //   background-color: orangered;
-  //   border-radius: 100%;
-  //   align-self: flex-end;
-  //   justify-content: flex-start;
-  //   margin-bottom: 250px;
-  //   color: white;
-  //   position: relative;
-  //   top: 0px;
-  //   right: 0px;
-  // }
-
-  .title {
-    font-size: 22px;
-    color: orangered;
-    margin: 0px;
-  }
-
-  .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    background-color: white;
-    padding: 5%;
-  }
-
-  .hiddentext {
-    align-self: flex-end;
+  .hidden {
+    margin-left: 10px;
+    opacity: 0%;
     overflow: hidden;
-    max-height: 0px;
-    transition: max-height 1s ease-in;
-    padding-bottom: 5%;
+    transition: opacity 1s;
   }
 
-  .bottom {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: blue;
+  .titre {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .soustitre {
+    color: red;
+    font-size: 22px;
+    margin-left: 10px;
+  }
+  .comment {
+    color: grey;
+    justify-content: center;
+    margin-left: 10px;
   }
   .photo {
-    background-color: orangered;
-    align-self: flex-start;
-    padding: 2px;
-    width: 25%;
-    color: white;
-    text-align: center;
+    position: absolute;
+    width: 150px;
+    margin-bottom: 250px;
+    p {
+      background-color: orangered;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
   }
 }
 
-%hidden_text .hiddentext {
-  max-height: 200px;
+%hidden .hidden {
+  opacity: 100%;
+  overflow: visible;
 }
 
-.container:hover {
-  @extend %hidden_text;
-  //@extend %ease_text;
-  //@extend %blur;
-}
-
-%blur .card  {
-  -ms-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -o-transform: scale(1.2);
+%flou .fond {
   transform: scale(1.2);
+  backdrop-filter: blur(5);
+  // overflow: hidden;
 }
 
+.container :hover {
+  @extend %hidden;
+  @extend %flou;
+}
+
+// .container {
+//   width: 400px;
+//   height: 500px;
+//   overflow: hidden;
+
+//   .card {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-end;
+//     margin-top: 5%;
+//     background-image: url("/src/girl.jpg");
+//     background-position: top;
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: cover;
+//     height: 100%;
+//     width: 100%;
+//     transition: 0.7s;
+//   }
+
+//   // .date {
+//   //   background-color: orangered;
+//   //   border-radius: 100%;
+//   //   align-self: flex-end;
+//   //   justify-content: flex-start;
+//   //   margin-bottom: 250px;
+//   //   color: white;
+//   //   position: relative;
+//   //   top: 0px;
+//   //   right: 0px;
+//   // }
+
+//   .title {
+//     font-size: 22px;
+//     color: orangered;
+//     margin: 0px;
+//   }
+
+//   .text {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-end;
+//     align-items: flex-start;
+//     background-color: white;
+//     padding: 5%;
+//   }
+
+//   .hiddentext {
+//     align-self: flex-end;
+//     overflow: hidden;
+//     max-height: 0px;
+//     transition: max-height 1s ease-in;
+//     padding-bottom: 5%;
+//   }
+
+//   .bottom {
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     color: blue;
+//   }
+//   .photo {
+//     background-color: orangered;
+//     align-self: flex-start;
+//     padding: 2px;
+//     width: 25%;
+//     color: white;
+//     text-align: center;
+//   }
+// }
+
+// %hidden_text .hiddentext {
+//   max-height: 200px;
+// }
+
+// .container:hover {
+//   @extend %hidden_text;
+//   //@extend %ease_text;
+//   //@extend %blur;
+// }
+
+// %blur .card  {
+//   -ms-transform: scale(1.2);
+//   -moz-transform: scale(1.2);
+//   -webkit-transform: scale(1.2);
+//   -o-transform: scale(1.2);
+//   transform: scale(1.2);
+// }

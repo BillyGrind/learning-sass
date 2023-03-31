@@ -1,65 +1,95 @@
 body {
   background: lightcyan;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .container {
-  width: 400px;
-  height: 500px;
-  overflow: hidden;
-}
-.container .card {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin-top: 5%;
+  width: 500px;
+  height: 600px;
+  margin-top: 10%;
+}
+
+.fond {
   background-image: url("/src/girl.jpg");
-  background-position: top;
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
-  height: 100%;
-  width: 100%;
-  transition: 0.7s;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 500px;
+  height: 400px;
+  transition: all 1s;
 }
-.container .title {
-  font-size: 22px;
-  color: orangered;
-  margin: 0px;
+.fond .date {
+  background-color: orangered;
+  color: white;
+  padding: 5px;
+  border-radius: 75px;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  text-align: center;
+  margin-left: 430px;
+  margin-top: 10px;
+  margin-right: 5px;
 }
-.container .text {
+
+.article {
+  background-color: beige;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
-  background-color: white;
-  padding: 5%;
-}
-.container .hiddentext {
-  align-self: flex-end;
+  width: 500px;
+  height: 200px;
   overflow: hidden;
-  max-height: 0px;
-  transition: max-height 1s ease-in;
-  padding-bottom: 5%;
 }
-.container .bottom {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: blue;
+.article .hidden {
+  margin-left: 10px;
+  opacity: 0%;
+  overflow: hidden;
+  transition: opacity 1s;
 }
-.container .photo {
+.article .titre {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.article .soustitre {
+  color: red;
+  font-size: 22px;
+  margin-left: 10px;
+}
+.article .comment {
+  color: grey;
+  justify-content: center;
+  margin-left: 10px;
+}
+.article .photo {
+  position: absolute;
+  width: 150px;
+  margin-bottom: 250px;
+}
+.article .photo p {
   background-color: orangered;
-  align-self: flex-start;
-  padding: 2px;
-  width: 25%;
+  padding: 20px;
   color: white;
   text-align: center;
 }
 
-.container:hover .hiddentext {
-  max-height: 200px;
+.container :hover .hidden {
+  opacity: 100%;
+  overflow: visible;
+}
+
+.container :hover .fond {
+  transform: scale(1.2);
+  -webkit-backdrop-filter: blur(5);
+          backdrop-filter: blur(5);
 }/*# sourceMappingURL=style.css.map */
