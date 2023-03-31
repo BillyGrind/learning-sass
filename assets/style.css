@@ -22,10 +22,9 @@ body {
   justify-content: flex-end;
   align-items: flex-start;
   background-color: white;
-  background-position: bottom;
-  max-height: 30%;
 }
 .container .hiddentext {
+  position: absolute;
   transform: scale(0);
 }
 .container .bottom {

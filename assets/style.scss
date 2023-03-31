@@ -20,19 +20,14 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    // padding: 5%;
     background-color: white;
-    background-position: bottom;
-    max-height: 30%;
-    // .hiddentext{
-    //     display: none;
-    // }
+    // width: auto;
+    // background-position: bottom;
+    // max-height: 30%;
   }
   .hiddentext {
+    position: absolute;
     transform: scale(0);
-    // max-height:max-content;
-    // overflow:hidden;
-
   }
   .bottom {
     display: flex;
@@ -61,9 +56,9 @@ body {
   }
 }
 
-// %hidden_text .hiddentext{
-//     display: block;
-// }
+ %hidden_text .hiddentext{
+     
+ }
 
 // %blur .container{
 //     background-size: 110%;
