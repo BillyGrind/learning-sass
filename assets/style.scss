@@ -15,20 +15,30 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-top: 5%;
+
+  .title{
+    font-size: 22px;
+    color:orangered;
+  }
+
   .text {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     background-color: white;
-    // width: auto;
-    // background-position: bottom;
-    // max-height: 30%;
-  }
+    padding: 5%;
+     }
+
   .hiddentext {
-    position: absolute;
-    transform: scale(0);
+    align-self: flex-end;
+    overflow: hidden;
+    max-height: 0px;
+    transition: max-height 1s ease-in;
+    padding-bottom: 5%;
   }
+
   .bottom {
     display: flex;
     justify-content: space-around;
@@ -40,11 +50,11 @@ body {
     border-radius: 100%;
     align-self: flex-end;
     justify-content: flex-start;
-    padding: 0px;
+    margin-bottom: 250px;
     color: white;
     position: relative;
-    top: 0px;
-    right: 0px;
+    top: 5px;
+    right: 5px;
   }
   .photo {
     background-color: orangered;
@@ -56,14 +66,24 @@ body {
   }
 }
 
- %hidden_text .hiddentext{
-     
- }
+%ease_text .text {
+  height: 500px;
+}
 
-// %blur .container{
-//     background-size: 110%;
-//     backdrop-filter: blur(10px) ;
-// }
+%hidden_text .hiddentext {
+  max-height: 200px;
+}
+
+.container:hover {
+  @extend %hidden_text;
+  //@extend %ease_text;
+  //@extend %blur;
+}
+
+%blur .container {
+  background-size: 110%;
+  backdrop-filter: blur(10px);
+}
 
 // %text_transition .text {
 //     transition-property: height;

@@ -15,6 +15,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-top: 5%;
+}
+.container .title {
+  font-size: 22px;
+  color: orangered;
 }
 .container .text {
   display: flex;
@@ -22,10 +27,14 @@ body {
   justify-content: flex-end;
   align-items: flex-start;
   background-color: white;
+  padding: 5%;
 }
 .container .hiddentext {
-  position: absolute;
-  transform: scale(0);
+  align-self: flex-end;
+  overflow: hidden;
+  max-height: 0px;
+  transition: max-height 1s ease-in;
+  padding-bottom: 5%;
 }
 .container .bottom {
   display: flex;
@@ -38,11 +47,11 @@ body {
   border-radius: 100%;
   align-self: flex-end;
   justify-content: flex-start;
-  padding: 0px;
+  margin-bottom: 250px;
   color: white;
   position: relative;
-  top: 0px;
-  right: 0px;
+  top: 5px;
+  right: 5px;
 }
 .container .photo {
   background-color: orangered;
@@ -51,4 +60,8 @@ body {
   width: 25%;
   color: white;
   text-align: center;
+}
+
+.container:hover .hiddentext {
+  max-height: 200px;
 }/*# sourceMappingURL=style.css.map */
