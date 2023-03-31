@@ -1,25 +1,54 @@
+// Faire deux sections principals
+// un pousse l'autre , le texte apparait en montant 
+// utiliser translate
+// 
+
+
+
 body {
   background: lightcyan;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
 .container {
-  background-image: url("/src/girl.jpg");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 400px;
   height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-top: 5%;
+  overflow: hidden;
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 5%;
+    background-image: url("/src/girl.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    transition: 0.7s;
+  }
 
-  .title{
+  // .date {
+  //   background-color: orangered;
+  //   border-radius: 100%;
+  //   align-self: flex-end;
+  //   justify-content: flex-start;
+  //   margin-bottom: 250px;
+  //   color: white;
+  //   position: relative;
+  //   top: 0px;
+  //   right: 0px;
+  // }
+
+  .title {
     font-size: 22px;
-    color:orangered;
+    color: orangered;
+    margin: 0px;
   }
 
   .text {
@@ -29,7 +58,7 @@ body {
     align-items: flex-start;
     background-color: white;
     padding: 5%;
-     }
+  }
 
   .hiddentext {
     align-self: flex-end;
@@ -45,17 +74,6 @@ body {
     align-items: center;
     color: blue;
   }
-  .date {
-    background-color: orangered;
-    border-radius: 100%;
-    align-self: flex-end;
-    justify-content: flex-start;
-    margin-bottom: 250px;
-    color: white;
-    position: relative;
-    top: 5px;
-    right: 5px;
-  }
   .photo {
     background-color: orangered;
     align-self: flex-start;
@@ -64,10 +82,6 @@ body {
     color: white;
     text-align: center;
   }
-}
-
-%ease_text .text {
-  height: 500px;
 }
 
 %hidden_text .hiddentext {
@@ -80,14 +94,11 @@ body {
   //@extend %blur;
 }
 
-%blur .container {
-  background-size: 110%;
-  backdrop-filter: blur(10px);
+%blur .card  {
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
-// %text_transition .text {
-//     transition-property: height;
-//     transition-duration: 2s;
-//     transition-timing-function: linear;
-//     transition-delay: 1s;
-// }
