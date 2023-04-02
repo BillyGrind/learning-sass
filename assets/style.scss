@@ -19,32 +19,31 @@ body {
   width: 500px;
   height: 600px;
   margin-top: 10%;
+  overflow: hidden;
   .fond {
     background-image: url("/src/girl.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     // background-attachment: fixed;
-    width: 500px;
-    height: 400px;
-    .fond:first-child {
-      overflow: hidden;
-      z-index: -1;
-      transition: all 10s;
-    }
-    .date {
-      background-color: orangered;
-      color: white;
-      padding: 5px;
-      border-radius: 75px;
-      height: 50px;
-      width: 50px;
-      position: absolute;
-      text-align: center;
-      margin-left: 430px;
-      margin-top: 10px;
-      margin-right: 5px;
-    }
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 1s;
+  }
+  .date {
+    background-color: orangered;
+    color: white;
+    padding: 5px;
+    border-radius: 75px;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    text-align: center;
+    margin-left: 430px;
+    margin-top: 10px;
+    margin-right: 5px;
+    z-index: 1;
   }
 
   .article {
@@ -54,13 +53,14 @@ body {
     justify-content: center;
     align-items: flex-start;
     width: 500px;
-    height: 200px;
-    overflow: hidden;
+    max-height: 200px;
+    transition: max-height 1s;
+    // overflow: hidden;
     .hidden {
       margin-left: 10px;
       opacity: 0%;
       overflow: hidden;
-      transition: opacity 1s;
+      transition: all 1s;
     }
 
     .titre {
@@ -95,17 +95,23 @@ body {
 %hidden .hidden {
   opacity: 100%;
   overflow: visible;
+  padding: 5px;
 }
 
-%flou .fond:first-child {
-  transform: scale(1.2);
+%flou .fond {
   backdrop-filter: blur(10px);
-  overflow: visible;
+  transform: scale(1.2);
+}
+
+%box-size .article{
+  max-height: 600px;
+  padding: 5px;
 }
 
 .container:hover {
   @extend %hidden;
   @extend %flou;
+  @extend %box-size;
 }
 
 // .container {
