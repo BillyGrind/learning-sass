@@ -15,18 +15,20 @@ body {
   height: 600px;
   margin-top: 10%;
 }
-
-.fond {
+.container .fond {
   background-image: url("/src/girl.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-attachment: fixed;
   width: 500px;
   height: 400px;
-  transition: all 1s;
 }
-.fond .date {
+.container .fond .fond:first-child {
+  overflow: hidden;
+  z-index: -1;
+  transition: all 10s;
+}
+.container .fond .date {
   background-color: orangered;
   color: white;
   padding: 5px;
@@ -39,8 +41,7 @@ body {
   margin-top: 10px;
   margin-right: 5px;
 }
-
-.article {
+.container .article {
   background-color: beige;
   display: flex;
   flex-direction: column;
@@ -50,46 +51,47 @@ body {
   height: 200px;
   overflow: hidden;
 }
-.article .hidden {
+.container .article .hidden {
   margin-left: 10px;
   opacity: 0%;
   overflow: hidden;
   transition: opacity 1s;
 }
-.article .titre {
+.container .article .titre {
   font-size: 30px;
   margin-top: 20px;
   margin-left: 10px;
 }
-.article .soustitre {
+.container .article .soustitre {
   color: red;
   font-size: 22px;
   margin-left: 10px;
 }
-.article .comment {
+.container .article .comment {
   color: grey;
   justify-content: center;
   margin-left: 10px;
 }
-.article .photo {
+.container .article .photo {
   position: absolute;
   width: 150px;
   margin-bottom: 250px;
 }
-.article .photo p {
+.container .article .photo p {
   background-color: orangered;
   padding: 20px;
   color: white;
   text-align: center;
 }
 
-.container :hover .hidden {
+.container:hover .hidden {
   opacity: 100%;
   overflow: visible;
 }
 
-.container :hover .fond {
+.container:hover .fond:first-child {
   transform: scale(1.2);
-  -webkit-backdrop-filter: blur(5);
-          backdrop-filter: blur(5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  overflow: visible;
 }/*# sourceMappingURL=style.css.map */

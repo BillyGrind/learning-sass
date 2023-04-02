@@ -19,75 +19,75 @@ body {
   width: 500px;
   height: 600px;
   margin-top: 10%;
-}
-
-.fond {
-  background-image: url("/src/girl.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  width: 500px;
-  height: 400px;
-  // z-index: -1;
-  // backdrop-filter: blur(0);
-  // transform: scale(0);
-  transition: all 1s;
-  .date {
-    background-color: orangered;
-    color: white;
-    padding: 5px;
-    border-radius: 75px;
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    text-align: center;
-    margin-left: 430px;
-    margin-top: 10px;
-    margin-right: 5px;
-  }
-}
-
-.article {
-  background-color: beige;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 500px;
-  height: 200px;
-  overflow: hidden;
-  .hidden {
-    margin-left: 10px;
-    opacity: 0%;
-    overflow: hidden;
-    transition: opacity 1s;
-  }
-
-  .titre {
-    font-size: 30px;
-    margin-top: 20px;
-    margin-left: 10px;
-  }
-  .soustitre {
-    color: red;
-    font-size: 22px;
-    margin-left: 10px;
-  }
-  .comment {
-    color: grey;
-    justify-content: center;
-    margin-left: 10px;
-  }
-  .photo {
-    position: absolute;
-    width: 150px;
-    margin-bottom: 250px;
-    p {
+  .fond {
+    background-image: url("/src/girl.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    // background-attachment: fixed;
+    width: 500px;
+    height: 400px;
+    .fond:first-child {
+      overflow: hidden;
+      z-index: -1;
+      transition: all 10s;
+    }
+    .date {
       background-color: orangered;
-      padding: 20px;
       color: white;
+      padding: 5px;
+      border-radius: 75px;
+      height: 50px;
+      width: 50px;
+      position: absolute;
       text-align: center;
+      margin-left: 430px;
+      margin-top: 10px;
+      margin-right: 5px;
+    }
+  }
+
+  .article {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 500px;
+    height: 200px;
+    overflow: hidden;
+    .hidden {
+      margin-left: 10px;
+      opacity: 0%;
+      overflow: hidden;
+      transition: opacity 1s;
+    }
+
+    .titre {
+      font-size: 30px;
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+    .soustitre {
+      color: red;
+      font-size: 22px;
+      margin-left: 10px;
+    }
+    .comment {
+      color: grey;
+      justify-content: center;
+      margin-left: 10px;
+    }
+    .photo {
+      position: absolute;
+      width: 150px;
+      margin-bottom: 250px;
+      p {
+        background-color: orangered;
+        padding: 20px;
+        color: white;
+        text-align: center;
+      }
     }
   }
 }
@@ -97,13 +97,13 @@ body {
   overflow: visible;
 }
 
-%flou .fond {
+%flou .fond:first-child {
   transform: scale(1.2);
-  backdrop-filter: blur(5);
-  // overflow: hidden;
+  backdrop-filter: blur(10px);
+  overflow: visible;
 }
 
-.container :hover {
+.container:hover {
   @extend %hidden;
   @extend %flou;
 }
